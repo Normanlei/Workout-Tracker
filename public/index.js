@@ -20,9 +20,10 @@ let shouldNavigateAway = false;
 init();
 
 async function init() {
-  console.log(ocation.search.split("=")[1] === undefined);
+  console.log(location.search.split("=")[1] === undefined);
   if (location.search.split("=")[1] === undefined) {
     const workout = await API.getLastWorkout();
+    console.log(workout);
     if(workout) {
       location.search = "?id=" + workout._id;
     }

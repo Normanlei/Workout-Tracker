@@ -1,9 +1,9 @@
 const router = require("express").Router();
 const db = require("../models");
-
+const path = require("path");
 
 router.get("/exercise",(req,res)=>{
-    res.sendFile("../public/exercise.html");
+    res.sendFile(path.join(__dirname + "/../public/exercise.html"));
 });
 
 
@@ -11,6 +11,7 @@ router.get("/exercise",(req,res)=>{
 router.get("/api/workouts", (req, res) => {
     db.Workout.find({}).sort({ day: 1 })
         .then(workouts => {
+            console.log(workouts);
             res.json(workouts);
         });
 });
