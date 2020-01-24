@@ -9,6 +9,8 @@ const API = {
   },
   async addExercise(data) {
     const id = location.search.split("=")[1];
+    console.log(id);
+    console.log(data);
     //personal edit
     if (id) {
       const res = await fetch("/api/workouts/" + id, {

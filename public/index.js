@@ -17,7 +17,7 @@ const newWorkout = document.querySelector(".new-workout")
 let workoutType = null;
 let shouldNavigateAway = false;
 
-init();
+//init();
 
 async function init() {
   console.log(location.search.split("=")[1] === undefined);
